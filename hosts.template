@@ -1,0 +1,6 @@
+[proxmox]
+your-ansible-host
+[proxmox:vars]
+api_username=root@pam
+api_password=your-password
+api_host=your-proxmox-host
