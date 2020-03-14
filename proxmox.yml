@@ -1,6 +1,13 @@
 ---
 - hosts: proxmox
   remote_user: root
+  vars: 
+    cdrom: '{"ide0":"local:iso/CentOS-7-x86_64-Minimal-1804.iso,media=cdrom"}'
+    network: '{"net0":"virtio,bridge=vmbr0"}'
+    disk: '{"virtio0":"WD4T:200"}'
+    cores: 1
+    vcpus: 2
+    node: "home"
   tasks:
   - name: test proxmox_kvm
     proxmox_kvm:
@@ -9,7 +16,7 @@
       api_host    : "{{ api_host }}"
       vmid        : 112
       node        : "home"
-      ide         : '{"ide0":"local:iso/CentOS-7-x86_64-Minimal-1804.iso,media=cdrom"}'
+      ide         : "{{ isofile }}"
       net         : '{"net0":"virtio,bridge=vmbr0"}'
       virtio      : '{"virtio0":"WD4T:200"}'
       cores       : 1 
