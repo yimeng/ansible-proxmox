@@ -2,9 +2,9 @@
 - hosts: proxmox
   remote_user: root
   roles:
-    - { role: yimeng.proxmox}
+    #- { role: yimeng.proxmox}
       #    - { role: yimeng.proxmox,state: "present"}
       #- { role: yimeng.proxmox,vm_id: "200",state: "present"}
-      #- { role: yimeng.proxmox,vm_id: "111",state: "absent"}
+    - { role: yimeng.proxmox,vm_id: "111",state: "absent"}
       #- { role: yimeng.proxmox,vm_id: "200",state: "absent"}
 
